@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    /* border: 1px solid red; */
+    height: 100vh;;
+}
+
+#section-intro {
+    background-color: black;
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: lightgray;
+    text-align: center;
+}
+
+#timeline {
+    height: 60px;
+    background-color: blue;
+    position: sticky;
+    top: 0;
+}
