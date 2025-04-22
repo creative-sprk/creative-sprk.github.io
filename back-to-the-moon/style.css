@@ -20,8 +20,9 @@ body {
 }
 
 h1 {
-    color: lightgray;
+    color: gray;
     text-align: center;
+    font-size: 3rem;
 }
 
 #timeline {
