@@ -4,34 +4,67 @@
     padding: 0;
 }
 
-section {
-    /* border: 1px solid red; */
-    height: 100vh;;
-}
-
-#section-intro {
+main {
     background-color: black;
-    height: 100vh;
+    transition: all 1s linear;
 }
 
-#section-act-1 {
+.white-bg {
     background-color: white;
 }
 
+.black-bg {
+    background-color: black;
+}
+
+#section-intro {
+    /* background-color: black; */
+    height: 300vh;
+}
+
+#prologue {
+    /* background-color: black; */
+    height: 300vh;
+}
+
+#prologue-moon {
+    margin-top: 150vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+    height: 40vw;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.moon {
+    margin-top: 150vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+    height: 40vw;
+    border: 2px solid white;
+    border-radius: 50%;    
+}
+
+#section-act-1 {
+    height: 300vh;
+}
+
 #section-act-2 {
-    background-color: #ccc;
+    height: 300vh;
 }
 
 #section-act-3 {
-    background-color: #999;
+    height: 300vh;    
 }
 
 #section-act-4 {
-    background-color: #666;
+    height: 300vh;
 }
 
 #section-outro {
-    background-color: #000;
+    height: 300vh;
 }
 
 body {
@@ -46,8 +79,8 @@ h1 {
 }
 
 #timeline {
-    height: 60px;
-    background-color: blue;
+    height: 50px;
+    background-color: black;
     position: sticky;
     top: 0;
     color: white;
@@ -55,3 +88,9 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
+.starfield {
+    width: 100%;
+    height: auto;
+}
+

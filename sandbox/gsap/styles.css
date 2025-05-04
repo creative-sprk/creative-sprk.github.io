@@ -2,8 +2,12 @@ body {
     margin: 0;
 }
 
-.div1, .div2 {
+.div1, .div2, .div3 {
     height: 100vh;
+}
+
+.div2 {
+    height: 300vh;
 }
 
 .div1 {
@@ -14,16 +18,23 @@ body {
     background-color: salmon;
 }
 
+.div3 {
+    background-color: lightblue;
+}
+
 .square {
     width: 150px;
     height: 150px;
-    opacity: 0;
     background-color: magenta;
 }
 
 .square2 {
-    margin-top: 300px;
     width: 150px;
     height: 150px;
-    background-color: blue;
+    background-color: transparent;
+    border: 1px solid blue;
+}
+
+.box-red {
+    background-color: red;
 }
