@@ -4,43 +4,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back to the Moon...and Beyond!</title>
-    <link href="style.css" rel="stylesheet" />
+    <title>Back to the Moon...and Beyond</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 
-<body> 
+<body>
+
     <main>
-        <section id="prologue">
-            <div class="stars layer1"></div>
-            <div class="stars layer2"></div>
-            <div class="stars layer3"></div>
-            <div class="moon"></div>
-            <!-- <img src="assets/images/moon.png" class="moon" /> -->
-            <img src="assets/images/earth.png" class="earth" />            
+
+        <!-- PROLOGUE: MANKIND'S REACH FOR STARS -->
+        <section id="section-prologue" class="act black-bg">
+            <img id="prologue-starfield" src="assets/images/starfield.jpg">
+            <img id="prologue-moon" src="assets/images/moon.png">
+            <div id="prologue-title">
+                <h1>Back <span class="smallTitle">to the</span> Moon<br />and Beyond</h1>
+                <p>From Apollo to Artemis</p>
+            </div>
+            <img id="prologue-earth-edge" src="assets/images/earth-edge.png">
+            <div id="prologue-scrolltrigger" class="scrolltrigger">
+            </div>
         </section>
-        <div class="timeline-wrapper">
-            <div id="timeline">Artemis Program Timeline</div>
-            <section id="section-act-1">
-                <h1>Act I: A Legacy of Exploration</h1>
-            </section>
-            <section id="section-act-2">
-                <h1>Act II: The Artemis Era</h1>
-            </section>
-            <section id="section-act-3">
-                <h1>Act III: Lunar Gateway and Artemis III+</h1>
-            </section>
-            <section id="section-act-4">
-                <h1>Act IV: Beyond the Moon</h1>
-            </section>
-        </div>
-        <section id="section-outro">
-            <h1>Outro: This is Just the Beginning</h1>
+
+        <!-- JFK LAUNCHES APOLLO PROGRAM -->
+        <section id="act1-scene1" class="act white-bg">
+            <div style="padding:76.6% 0 0 0;position:relative;">
+                <iframe
+                    src="https://player.vimeo.com/video/1086614423?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" title="jfk-apollo-excerpt">
+
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js">
+            </script>
+            <p id="timeline-jfk-speech" class="timeline-date">
+                <span class="timeline-date-monthday">July 14,</span><br />
+                <span class="timeline-date-year">1964</span>
+            </p>
         </section>
-    </main>
+
+
+        <!-- APOLLO BLUEPRINT -->
+        <!-- <section id="act1-scene2" class="act">
+            <img id="blueprint-grid" class="cover" src="assets/images/blueprint-grid.svg">
+        </section> -->
+
+        <!-- FOOTPRINT / LANDING MARKERS -->
+        <section id="act1-scene3" class="act black-bg">
+            <div id="footprint-landing-sites">
+                <!-- <div id="footprint-trigger" class="scroll-trigger"></div>             -->
+                <img id="neil-armstrong-footprint" class="cover" src="assets/images/neil-armstrong-footprint2.webp">
+
+                <!-- APOLLO LANDING SITES MAP -->
+                <div id="act1-moon-wrapper">
+                    <img src="assets/images/moon.png">
+                    <div id="apollo11-site-marker" class="site-marker"></div>
+                    <div id="apollo11-info" class="apollo-info-box">
+                        <p class="apollo-info-text">Apollo 11</p>
+                    </div>
+                    <div id="apollo12-site-marker" class="site-marker"></div>
+                    <div id="apollo12-info" class="apollo-info-box">
+                        <p class="apollo-info-text">Apollo 12</p>
+                    </div>
+                    <div id="apollo14-site-marker" class="site-marker"></div>
+                    <div id="apollo14-info" class="apollo-info-box">
+                        <p class="apollo-info-text">Apollo 14</p>
+                    </div>
+                    <div id="apollo15-site-marker" class="site-marker"></div>
+                    <div id="apollo15-info" class="apollo-info-box">
+                        <p class="apollo-info-text">Apollo 15</p>
+                    </div>
+                    <div id="apollo16-site-marker" class="site-marker"></div>
+                    <div id="apollo16-info" class="apollo-info-box">
+                        <p class="apollo-info-text">Apollo 16</p>
+                    </div>
+                    <div id="apollo17-site-marker" class="site-marker"></div>
+                    <div id="apollo17-info" class="apollo-info-box">
+                        <p class="apollo-info-text">Apollo 17</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- END OF APOLLO PROGRAM -->
+        <section id="act1-scene5" class="act white-bg">
+            <div id="artemis-enddate-wrapper">
+                <p id="timeline-apollo-end" class="timeline-date">
+                    <span class="timeline-date-monthday">December 19,</span><br />
+                    <span class="timeline-date-year">1972</span>
+                </p>
+                <p id="timeline-artemis-start" class="timeline-date">
+                    <span class="timeline-date-monthday">December 11,</span><br />
+                    <span class="timeline-date-year">2017</span>
+                </p>
+
+                <p id="apollo-17-narrative-1">Apollo 17’s 12-day mission to the Moon
+                    broke a number of records:
+                    the longest space walk, the longest lunar
+                    landing and the largest lunar samples
+                    brought back to Earth.</p>
+                <p id="apollo-17-narrative-2">We haven’t been back since.</p>
+                <p id="artemis-narrative-1">NASA announces we're returning to the Moon.</p>
+            </div>
+        </section>
+
+
+        <!-- ------------------------------ -->
+        <!-- ACT 2: ARTEMIS PROGRAM BEGINS -->
+        <!-- ------------------------------ -->
+        <!-- COMPARING SPACESUITS -->
+        <section id="act2-scene2" class="act black-bg">
+
+            <p>The Artemis spacesuits, designed for lunar exploration, represent a significant advancement over the
+                Apollo suits. They offer enhanced mobility, improved safety features, and are designed for a wider range
+                of tasks and environmental conditions. The Artemis suits are also designed for longer missions and are
+                more customizable than their Apollo-era predecessors.</p>
+
+            <h2>Compare the Apollo and Artemis spacesuit designs.</h2>
+
+            <div class="image-comparison">
+                <div class="images-container">
+                    <img class="before-image" src="assets/images/apollo-spacesuit.jpg">
+                    <img class="after-image" src="assets/images/artemis-spacesuit.jpg">
+
+                    <div class="slider-line"></div>
+                    <div class="slider-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                        </svg>
+                    </div>
+                    <input type="range" class="slider" min="0" max="100">
+                </div>
+            </div>
+            <!-- <div id="spacesuit-comparison">
+                <h2>Mobility</h2>
+                <div class="compare-category">
+                    <div>
+                        <h3>Artemis suits</h3>
+                        <p>Feature more joints and a greater range of motion, allowing for more complex tasks like
+                            squatting
+                            and bending.</p>
+                    </div>
+                    <div>
+                        <h3>Apollo suits</h3>
+                        <p>Were more restrictive, limiting movement and requiring more effort for certain actions.
+                        </p>
+                    </div>
+                </div>
+                <h2>Safety and Durability:</h2>
+                <div class="compare-category">
+                    <div>
+                        <h3>Artemis suits</h3>
+                        <p>Incorporate advanced materials and designs to protect against hazards like
+                            micrometeoroids and
+                            extreme
+                            temperatures on the Moon.</p>
+                    </div>
+                    <div>
+                        <h3>Apollo suits</h3>
+                        <p>While effective, they were not designed for the same level of durability and protection
+                            against the
+                            specific lunar environment.</p>
+                    </div>
+                </div>
+                <h2>Joints</h2>
+                <div class="compare-category">
+                    <div>
+                        <h3>Artemis suits</h3>
+                        <p>The Artemis suits use more robust hard shell
+                            components for better longevity.</p>
+                    </div>
+                    <div>
+                        <h3>Apollo suits</h3>
+                        <p>The Apollo suits had vulnerable soft joints.</p>
+                    </div>
+                </div>
+                <h2>Mission Capabilities</h2>
+                <div class="compare-category">
+                    <div>
+                        <h3>Artemis suits</h3>
+                        <p>
+                            Are designed for longer missions and more complex tasks than Apollo, enabling more
+                            extensive
+                            scientific
+                            exploration.</p>
+                    </div>
+                    <div>
+                        <h3>Apollo suits</h3>
+                        <p>
+                            Were designed for shorter missions and focused primarily on landing and returning.</p>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </section>
+
+        <!-- --------------------- -->
+        <!-- ACT 3: LUNAR GATEWAY -->
+        <!-- --------------------- -->
+        <!-- <section id="act3-scene1" class="act">
+            <div id="act3-moon-wrapper">
+                <img id="act3-moon" src="assets/images/moon.png">
+                <img id="lunar-gateway" src="assets/images/lunar-gateway.png">
+            </div>
+        </section>
+
+        <section id="act4-scene1" class="act">
+            <img id="act4-mars" src="assets/images/Mars_planet.png" />
+        </section>
+
+        <section id="section-outro" class="act">
+
+        </section>
+    </main> -->
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="app2.js"></script>    
+    <script src="scripts/app.js"></script>
+    <script src="scripts/slider.js"></script>
+
 </body>
 
 </html>

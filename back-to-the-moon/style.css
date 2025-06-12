@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/ohe8jbz.css");
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,6 +11,13 @@ main {
     transition: all 1s linear;
 }
 
+.scroll-trigger {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    z-index:9999
+}
+
 .white-bg {
     background-color: white;
 }
@@ -17,68 +26,493 @@ main {
     background-color: black;
 }
 
-#section-intro {
-    /* background-color: black; */
-    height: 300vh;
+/* Set text color against dark backgrounds */
+.black-bg p,
+.black-bg li,
+.black-bg h1,
+.black-bg h2,
+.black-bg h3 {
+    color: white;
 }
 
-#prologue {
-    /* background-color: black; */
-    height: 300vh;
+/* Set text color against light backgrounds */
+.white-bg p,
+.white-bg li,
+.white-bg h1,
+.white-bg h2,
+.white-bg h3 {
+    color: black;
 }
 
-#prologue-moon {
-    margin-top: 150vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40vw;
-    height: 40vw;
-    border: 2px solid white;
-    border-radius: 50%;
+.act {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
 }
 
-.moon {
-    margin-top: 150vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40vw;
-    height: 40vw;
-    border: 2px solid white;
-    border-radius: 50%;    
+p {
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2rem;
+    width: 65ch;
+    margin: 1.5rem auto;
 }
 
-#section-act-1 {
-    height: 300vh;
-}
-
-#section-act-2 {
-    height: 300vh;
-}
-
-#section-act-3 {
-    height: 300vh;    
-}
-
-#section-act-4 {
-    height: 300vh;
-}
-
-#section-outro {
-    height: 300vh;
-}
-
-body {
-    margin: 0;
-    padding: 0;
+p.large {
+    font-size: 3rem;
+    margin: 2rem auto;
 }
 
 h1 {
     color: gray;
     text-align: center;
+    font-size: 4rem;
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    margin: 2rem auto 1rem auto;
+    line-height: 4rem;
+}
+
+h2 {
+    color: gray;
+    text-align: center;
+    font-size: 2rem;
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    margin: 1rem auto 1rem auto;
+}
+
+.timeline-date {
+    font-family: futura-pt-bold, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 12rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.timeeline-date-monthday {
+    font-size: 4.5rem;
+    letter-spacing: .1ch;
+    padding-left: 1ch;
+}
+
+.timeline-date-year {
+    font-size: 24rem;
+    letter-spacing: -.1ch;
+}
+
+
+/* ---------------- */
+/* PROLOGUE         */
+/* ---------------- */
+/* ensure prologue sits beneath everything */
+#section-prologue {
+  z-index: 0;
+}
+
+#prologue-starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+#prologue-moon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: 60vw;
+    transform-origin: center center;    
+    transform: translate(-50%, -50%) scale(1);
+    margin: 0 auto;
+    z-index: 0;
+}
+
+#prologue-earth-edge {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    display: block;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 3;
+}
+
+#prologue-title {
+    display: block;
+    position: absolute;    
+    color: white;
+    width: 100vw;
+    transform: translate(0%, -50%);
+    /* left: 50%; */
+    top: 50%;
+    margin: 5% auto;
+    z-index: 2;
+    text-align: center;
+}
+
+#prologue-title h1 {
+    text-transform: uppercase;
+    font-size: 8rem;
+}
+#prologue-title p {
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+
+/* ---------------- */
+/* ACT 1, SCENE 1 */
+
+/* Act 1 container sits on top when it scrolls in */
+#act1-scene1 {
+  z-index: 5;
+  /* height: 200vh;    100vh wipe + 100vh hold */
+  /* background-color: red; */
+}
+
+#timeline-jfk-speech {
+    /* display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 9999; */
+}
+
+/* 1a) Container masks the video as it scrolls in/out */
+#act1-scene1 .video-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;       /* exactly one viewport tall */
+  overflow: hidden;    /* hide anything outside */
+  z-index: 5;          /* slides on top of prologue */
+}
+
+/* 1b) The reveal layer sits inside that mask */
+.video-reveal {
+  position: absolute;
+  top:   0;
+  left:  0;
+  width:  100%;
+  height: 100%;
+  clip-path: inset(100% 0 0 0);  /* start fully hidden: top inset = 100% */
+}
+
+/* 1c) Ensure your iframe fills the reveal */
+.video-reveal iframe {
+  position: absolute !important;
+  top:   0 !important;
+  left:  0 !important;
+  width: 100vw !important;
+  height:100vh !important;
+  object-fit: cover !important;
+  transform: none !important;
+}
+
+.smallTitle {
     font-size: 3rem;
 }
 
-#timeline {
+#act1-scene3 {
+    height: 300vh;
+}
+
+#footprint-trigger {
+    display: block;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    z-index: 9999;
+}
+
+
+#act1-moon-wrapper {
+    display: block;
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    right: 30vw;
+    margin: 0 auto;
+    width: 40vw;
+    height: 40vw;
+    /* border: 2px solid white; */
+    /* border-radius: 50%; */
+    overflow: hidden;
+    z-index: -1;
+}
+
+#act1-moon-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.site-marker {
+    width: 3%;
+    height: 3%;
+    border: 3px solid black;
+    border-radius: 50% 50%;
+    background-color: white;
+    position: absolute;
+}
+
+.apollo-info-box {
+    position: absolute;
+    background-color: black;
+    width: auto;
+    padding: 0.5rem;
+}
+
+.apollo-info-text {
+    color: white;
+    font-size: 0.75rem;
+    margin: 0;
+    width: auto;
+    text-transform: uppercase;
+    letter-spacing: .2ch;
+}
+
+#neil-armstrong-footprint {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Site markers for Apollo landings */
+#apollo11-site-marker {
+    left: 63%;
+    top: 50%;
+    opacity: 0;
+}
+
+#apollo11-info {
+    left: 65%;
+    top: 52%;
+    opacity: 0;
+}
+
+#apollo12-site-marker {
+    left: 25%;
+    top: 56%;
+    opacity: 0;
+}
+
+#apollo12-info {
+    left: 25%;
+    top: 58%;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+#apollo14-site-marker {
+    left: 29%;
+    top: 56.5%;
+    opacity: 0;
+}
+
+#apollo14-info {
+    left: 31%;
+    top: 58.5%;
+    opacity: 0; 
+}
+
+#apollo15-site-marker {
+    left: 47%;
+    top: 30.5%;
+    opacity: 0;
+}
+
+#apollo15-info {
+    left: 49%;
+    top: 32.5%;
+    opacity: 0; 
+}
+
+#apollo16-site-marker {
+    left: 57%;
+    top: 62%;
+    opacity: 0;
+}
+
+#apollo16-info {
+    left: 59%;
+    top: 64%;
+    opacity: 0;
+}
+
+#apollo17-site-marker {
+    left: 69%;
+    top: 34%;
+    opacity: 0;
+}
+
+#apollo17-info {
+    left: 71%;
+    top: 36%;
+    opacity: 0;
+}
+
+/* ---------------- */
+/* DATES ROLLING */
+/* ---------------- */
+#act1-scene5 {
+
+}
+
+
+#artemis-enddate-wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;    
+}
+
+#timeline-artemis-start {
+    display: block;
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 34%;
+    color: white;
+    opacity: 0;
+}
+
+#apollo-17-narrative-1 {
+    opacity: 0;
+}
+
+#apollo-17-narrative-2 {
+    opacity: 0;
+    position: relative;
+    top: -6rem;
+}
+
+#artemis-narrative-1 {
+    opacity: 0;
+    position: relative;
+    top: -10rem;
+    color: white;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+#act4-mars {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#act2-scene2 {
+    height: 300vh;
+}
+
+
+
+
+/* -------------------- */
+/* SPACESUIT COMPARISON */
+/* -------------------- */
+.image-comparison {
+    max-width: 700px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.image-comparison img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.image-comparison .images-container {
+    position: relative;
+    display: flex;
+}
+
+.image-comparison .images-container .before-image {
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+.image-comparison .slider {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.image-comparison .slider-line {
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-comparison .slider-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    color: white;
+    transform: translate(-50%, -50%) rotateZ(90deg);
+}
+
+/* -------------------- */
+
+
+
+#lunar-gateway {
+    width: 10vw;
+    height: auto;
+    position: absolute;
+    top: 30px;
+    left: 40%;
+}
+
+#act3-moon-wrapper {
+    display: block;
+    position: absolute;
+    top: 30vh;
+    left: 35vw;
+    right: 35vw;
+    margin: 0 auto;
+    width: 30vw;
+    height: 30vw;
+    /* border: 2px solid white; */
+    /* border-radius: 50%; */
+    overflow: hidden;
+}
+
+#act3-moon {
+    width: 100%;
+    height: auto;
+}
+
+
+#blueprint-grid {
+    background-color: white;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* #timeline {
     height: 50px;
     background-color: black;
     position: sticky;
@@ -87,10 +521,22 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.starfield {
+#spacesuit-comparison {
     width: 100%;
-    height: auto;
+    max-width: 700px;
+    border: 1px solid red;
 }
 
+#spacesuit-comparison h2 {
+    text-align: center;
+}
+#spacesuit-comparison .compare-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#spacesuit-comparison .compare-category div {
+    align: center;
