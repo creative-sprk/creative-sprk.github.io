@@ -163,7 +163,6 @@ ScrollTrigger.create({
 
 
 
-
 // 1) grab the iframe and wrap it in a Vimeo.Player instance
 const iframe = document.querySelector("#act1-scene1 iframe");
 const vimeoPlayer = new Vimeo.Player(iframe);
