@@ -1,6 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// window.alert("foo");
 
 // ----------------------------
 // SLOW-SCROLL STARFIELD FOR PROLOGUE
@@ -130,7 +129,7 @@ ScrollTrigger.create({
   pin:     true,            // pin it in place
   pinSpacing: true,         // (optional) remove the extra blank space it normally leaves
   scrub: 1,              // (optional) tie any attached tweens to the scroll position
-  markers: true,            // (optional) shows visual start/end markers
+  markers: false,            // (optional) shows visual start/end markers
   id: "dates",
   toggleActions: "restart none none restart",
   animation: datesTL
@@ -156,7 +155,7 @@ ScrollTrigger.create({
   pin:     true,            // pin it in place
   pinSpacing: true,         // (optional) remove the extra blank space it normally leaves
   scrub: false,              // (optional) tie any attached tweens to the scroll position
-  markers: true,            // (optional) shows visual start/end markers
+  markers: false,            // (optional) shows visual start/end markers
   id: "dates-2",
   toggleActions: "restart none restart restart",
   animation: dates2TL
@@ -180,5 +179,5 @@ ScrollTrigger.create({
   onLeaveBack:  () => vimeoPlayer.pause(),      // scroll past (up)
   // optional:
   scrub:    false,  
-  markers:  true
+  markers:  false
 });
